@@ -1,13 +1,5 @@
 com\tao\rental\RentalApplication.class
-com\tao\rental\controller\HouseController.class
-com\tao\rental\service\HouseService.class
-com\tao\rental\entity\House.class
-com\tao\rental\controller\UserController.class
-com\tao\rental\mapper\UserMapper.class
-com\tao\rental\entity\User.class
-com\tao\rental\service\impl\HouseServiceImpl.class
-com\tao\rental\config\CorsConfig.class
-com\tao\rental\mapper\HouseMapper.class
-com\tao\rental\service\UserService.class
-com\tao\rental\service\impl\UserServiceImpl.class
-com\tao\rental\config\WebConfig.class
+com\tao\rental\controller\WebController.class
+com\tao\rental\util\Md5Util.class
+com\tao\rental\common\Result.class
+com\tao\rental\util\JwtUtil.class
