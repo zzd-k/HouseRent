@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dl.mapper.ContractMapper">
+
+    <!-- ContractMapper.xml -->
+    <select id="findByCondition" resultType="com.dl.pojo.Contract">
+        SELECT c.*, h.title AS houseName, f.username AS tenantName
+        FROM contract c
+        LEFT JOIN houserent h ON c.house_id = h.id
+        LEFT JOIN front f ON c.tenant_id = f.id
+        WHERE 1=1
+        <if test="contractTitle != null and contractTitle != ''">
+            AND c.contract_title LIKE CONCAT('%', #{contractTitle}, '%')
+        </if>
+        <if test="signStatus != null and signStatus != ''">
+            AND c.sign_status = #{signStatus}
+        </if>
+        ORDER BY c.create_time DESC
+    </select>
+
+
+    <update id="update" parameterType="com.dl.pojo.Contract">
+        update contract
+        set
+            landlord_signed = #{landlordSigned},
+            tenant_signed = #{tenantSigned},
+            sign_status = #{signStatus},
+            signed_time = #{signedTime},
+            update_time = #{updateTime}
+        where id = #{id}
+    </update>
+
+</mapper>
+

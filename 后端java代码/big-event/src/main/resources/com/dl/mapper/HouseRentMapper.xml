@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.dl.mapper.HouseRentMapper">
+<select id="list" resultType="com.dl.pojo.HouseRent">
+    select * from houserent
+    <where>
+        <if test="houserentId!=null">
+            and  houserent_id=#{houserentId}
+        </if>
+        <if test="state != null and state != ''">
+            and state=#{state}
+        </if>
+        <if test="auditStatus != null">
+            and audit_status = #{auditStatus}
+        </if>
+
+    </where>
+    ORDER BY create_time DESC
+</select>
+
+    <update id="updateState">
+        UPDATE houserent
+        SET state = #{state},
+            update_time = NOW()
+        WHERE id = #{id}
+    </update>
+
+
+</mapper>
+
+<!--        #         and create_user=#{frontId}-->
