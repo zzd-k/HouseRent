@@ -1,0 +1,30 @@
+{
+  "name": "big-event",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueup/vue-quill": "^1.2.0",
+    "axios": "1.7.8",
+    "dayjs": "^1.11.13",
+    "echarts": "^5.6.0",
+    "element-plus": "^2.7.8",
+    "file-saver": "^2.0.5",
+    "pinia": "^2.2.0",
+    "pinia-persistedstate-plugin": "^0.1.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "^1.77.8",
+    "vite": "6.2.0"
+  }
+}
